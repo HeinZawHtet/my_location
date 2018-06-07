@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CSS For backend Dev</title>
+    <title>#Location #Myanmar</title>
     <link rel="stylesheet" href="css/app.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">    
@@ -14,13 +14,41 @@
 
     <div class="container bg-grey-lightest mx-auto shadow pb-4 bg-cover">
         <div class="mt-2 p-4 border-b border-grey-light  text-center">
-          <span class="text-4xl font-thin">#location</span>
-      </div>
+          <span class="text-4xl font-thin">#location</span>    
+        </div>
       <div class="flex justify-center">
-          <div class="text-center p-2">
-            <div id="app">
+                  <div class="text-center p-4">
+                    <div id="app">
+                        <div class="container mx-auto px-4 center">
+                            <div class="inline-block relative w-64">
+                              <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" v-model="selected" v-on:change="onChange" id="select1">
+                                <option disabled value="">တိုင်းနှင့်ပြည်နယ်</option>
+                                <option v-for="region in regions" v-bind:value="{ value: region.regionState, gName: region.govName, gName_my: region.govName_my ,value_my: region.regionState_my}" v-text="region.regionState_my"></option>
+                            </select>
+                            <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <span v-text="selected.value_my">                                
+                            </span> ဝန်ကြီးချုပ် <strong>
+                                <a :href="'https://my.wikipedia.org/wiki/' + selected.gName_my">
+                                    <span v-text="selected.gName_my"></span>
+                                </a>
+                            </strong>
+                        </div>
+                        <div class="inline-block relative w-64">
+                          <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" id="select2" v-model= "list">
+                            <option disabled value="">မြို့နယ်</option>
+                            <option  v-for="option in options" v-bind:value="option.value" v-text="option.city_my"></option>
+                        </select>
+                        <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                    <h1>#eng</h1>
                 <div class="container mx-auto px-4 center">
-
                     <div class="inline-block relative w-64">
                       <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" v-model="selected" v-on:change="onChange" id="select1">
                         <option disabled value="">Please select Region/State</option>
@@ -31,7 +59,12 @@
                     </div>
                 </div>
                 <div class="p-2">
-                    <span v-text="selected.value"></span> Minister <b><span v-text="selected.gName"></span></b></p>
+                   <span v-text="selected.value"></span>
+                    Minister <strong>
+                        <a :href="'https://en.wikipedia.org/wiki/' + selected.gName">
+                        <span v-text="selected.gName"></span>
+                        </a>
+                    </strong>
                 </div>
                 <div class="inline-block relative w-64">
                   <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" id="select2" v-model= "list">
@@ -42,37 +75,14 @@
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                 </div>
             </div>
-        </div>
-        <h1>#myanmar</h1>
-        <div class="container mx-auto px-4 center">
-
-                    <div class="inline-block relative w-64">
-                      <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" v-model="selected" v-on:change="onChange" id="select1">
-                        <option disabled value="">တိုင်းနှင့်ပြည်နယ်</option>
-                        <option v-for="region in regions" v-bind:value="{ value: region.regionState, gName: region.govName, gName_my: region.govName_my ,value_my: region.regionState_my}" v-text="region.regionState_my"></option>
-                    </select>
-                    <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                    </div>
-                </div>
-                <div class="p-2">
-                    <p>{{ selected.value_my }} Minister {{ selected.gName_my }}</p>
-                </div>
-                <div class="inline-block relative w-64">
-                  <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" id="select2" v-model= "list">
-                    <option disabled value="">Please select City</option>
-                    <option  v-for="option in options" v-bind:value="option.value" v-text="option.city"></option>
-                </select>
-                <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                </div>
-            </div>
-        </div>
-    </div>
+        </div>        
+    </div><!-- #app -->
+    <div class="p-2">
+        <a href="https://github.com/myohanhtet/my_location/" class="p-2">@Github</a> 
+    </div>       
 </div>
-</div>
-</div>
+</div><!-- justify-center -->
+</div><!-- main-container -->
 <script src="js/location_en.js"></script>
-<!-- <script src="js/location_my.js"></script> -->
 </body>
 </html>
