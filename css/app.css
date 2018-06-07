@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Padauk');
-
-body {
-	font-family: 'Padauk','Lato',  sans-serif;	
+body, select, option {
+	font-family: 'Padauk','Source Sans Pro',  sans-serif;
+	letter-spacing: 1px;
 }

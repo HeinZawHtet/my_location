@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>#Location #Myanmar</title>
+    <link href="https://fonts.googleapis.com/css?family=Padauk|Source+Sans+Pro:200" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">    
@@ -23,7 +24,7 @@
                             <div class="inline-block relative w-64">
                               <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" v-model="selected" v-on:change="onChange" id="select1">
                                 <option disabled value="">တိုင်းနှင့်ပြည်နယ်</option>
-                                <option v-for="region in regions" v-bind:value="{ value: region.regionState, gName: region.govName, gName_my: region.govName_my ,value_my: region.regionState_my}" v-text="region.regionState_my"></option>
+                                <option class="tracking-wide" v-for="region in regions" v-bind:value="{ value: region.regionState, gName: region.govName, gName_my: region.govName_my ,value_my: region.regionState_my}" v-text="region.regionState_my"></option>
                             </select>
                             <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -47,11 +48,11 @@
                         </div>
                     </div>
                 </div>
-                    <h1>#eng</h1>
+                    <span class="text-4xl font-thin text-grey">#eng</span>  
                 <div class="container mx-auto px-4 center">
                     <div class="inline-block relative w-64">
                       <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" v-model="selected" v-on:change="onChange" id="select1">
-                        <option disabled value="">Please select Region/State</option>
+                        <option disabled value="">Region/State</option>
                         <option v-for="region in regions" v-bind:value="{ value: region.regionState, gName: region.govName,gName_my: region.govName_my,value_my: region.regionState_my}" v-text="region.regionState"></option>
                     </select>
                     <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
@@ -68,7 +69,7 @@
                 </div>
                 <div class="inline-block relative w-64">
                   <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" id="select2" v-model= "list">
-                    <option disabled value="">Please select City</option>
+                    <option disabled value="">City/Township</option>
                     <option  v-for="option in options" v-bind:value="option.value" v-text="option.city"></option>
                 </select>
                 <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
