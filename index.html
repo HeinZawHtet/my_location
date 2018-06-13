@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="my_MM">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +39,7 @@
                             </strong>
                         </div>
                         <div class="inline-block relative w-64">
-                          <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" id="select2" v-model= "list">
+                          <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" id="select2" v-model= "list" :disabled="isdisable">
                             <option disabled value="">မြို့နယ်</option>
                             <option  v-for="option in options" v-bind:value="option.value" v-text="option.city_my"></option>
                         </select>
@@ -68,7 +68,7 @@
                     </strong>
                 </div>
                 <div class="inline-block relative w-64">
-                  <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" id="select2" v-model= "list">
+                  <select class="leading-loose block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight" id="select2" v-model= "list" :disabled="isdisable">
                     <option disabled value="">City/Township</option>
                     <option  v-for="option in options" v-bind:value="option.value" v-text="option.city"></option>
                 </select>
