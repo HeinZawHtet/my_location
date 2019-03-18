@@ -45,9 +45,9 @@
         		},
         		{
         			regionState: 'Tanintharyi Region',
-        			govName: 'Le Le Maw',
+        			govName: 'U Myint Maung',
                     regionState_my: 'တနင်္သာရီတိုင်းဒေသကြီး',
-                    govName_my: 'လဲ့လဲ့မော်'
+                    govName_my: 'ဦးမြင့်မောင်'
         		},
         		{
         			regionState: 'Shan State',
